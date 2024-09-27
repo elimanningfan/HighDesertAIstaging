@@ -1,70 +1,36 @@
-/* Basic Styling */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    background-color: #f7f7f7; /* Off-white background */
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Section Borders */
-header,
-.hero,
-.featured,
-footer {
-    border: 1px solid #ddd; /* Light gray border for each section */
-}
-
-/* Header Styling */
-header {
-    padding: 20px 0;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    float: left; 
-}
-
-nav {
-    float: right; 
-}
-
-nav ul {
-    list-style: none;
+    font-family: sans-serif;
+    background-color: white;
     margin: 0;
     padding: 0;
 }
 
-nav li {
-    display: inline-block;
-    margin-left: 20px;
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 
-/* Hero Section Styling */
-.hero {
-    text-align: center;
-    padding: 100px 0;
+h1 {
+    margin-bottom: 20px;
 }
 
-/* Featured Section Styling */
-.featured {
-    padding: 50px 0;
+input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
 }
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 20px;
+button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Example blue color */
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
-/* Footer Styling */
-footer {
-    color: #000; 
-    text-align: center;
-    padding: 20px 0;
+#mascotResponse {
+    margin-top: 20px;
 }
