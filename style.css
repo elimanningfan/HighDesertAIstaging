@@ -1,7 +1,8 @@
 /* Basic Styling */
 body {
-    font-family: sans-serif;
+    font-family: 'Arial', sans-serif; /* Modern font */
     margin: 0;
+    background-color: #fff; /* White background */
 }
 
 .container {
@@ -10,20 +11,27 @@ body {
     padding: 0 20px;
 }
 
+/* Section Borders */
+header,
+.hero,
+.featured,
+footer {
+    border: 1px solid black; /* Thin black border for each section */
+}
+
 /* Header Styling */
 header {
-    background-color: #f0f0f0;
     padding: 20px 0;
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
-    float: left; /* Align logo to the left */
+    float: left; 
 }
 
 nav {
-    float: right; /* Align navigation to the right */
+    float: right; 
 }
 
 nav ul {
@@ -39,7 +47,6 @@ nav li {
 
 /* Hero Section Styling */
 .hero {
-    background-color: #e0e0e0;
     text-align: center;
     padding: 100px 0;
 }
@@ -51,14 +58,13 @@ nav li {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 20px;
 }
 
 /* Footer Styling */
 footer {
-    background-color: #333;
-    color: #fff;
+    color: #000; /* Black text color for the footer */
     text-align: center;
     padding: 20px 0;
 }
