@@ -1,56 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>High Desert AI Staging</title>
+    <title>Simple Search Engine</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <a href="#" class="logo">Your Logo</a>
-            <nav>
-                <ul>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Journal</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="container">
+        <h1>My Simple Search</h1>
+        <input type="text" id="messageField" placeholder="Enter your query...">
+        <button onclick="sendMessage()">Search</button>
+        <p id="mascotResponse"></p>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Welcome to Our Store</h1>
-            <p>Discover our curated collection of handcrafted goods.</p>
-            <button>Shop Now</button>
-        </div>
-    </section>
+        <script type="application/javascript">
+            // Send message
+            const sendMessage = () => {
+                // Get iFrame ref
+                let iframeElement = document.getElementById("wiseox-iframe");
 
-    <section class="featured">
-        <div class="container">
-            <h2>Featured Products</h2>
-            <div class="product-grid">
-                <div class="product">
-                    <img src="product1.jpg" alt="Product 1">
-                    <h3>Product 1</h3>
-                    <p>Description of product 1.</p>
-                </div>
-                <div class="product">
-                    <img src="product2.jpg" alt="Product 2">
-                    <h3>Product 2</h3>
-                    <p>Description of product 2.</p>
-                </div>
-                </div>
-        </div>
-    </section>
+                // Get message field value
+                let messageValue = document.getElementById("messageField").value;
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Your Company Name</p>
-        </div>
-    </footer>
+                const iframeWindow = iframeElement.contentWindow;
+
+                // Send the event to the iframe.
+                iframeWindow.postMessage(
+                    {
+                        type: "send-message",
+                        message: messageValue,
+                    },
+                    "*"
+                );
+            };
+
+            // Receive Message
+            window.addEventListener("message", (e) => {
+                if (e.data.type == "received-message") {
+                    if (e.data.mascotId == "660c93a37da28e00276bf088") {
+                        // Print the response
+                        let mascotResponse = document.getElementById("mascotResponse");
+                        mascotResponse.innerHTML = e.data.message;
+                    }
+                }
+            });
+        </script>
+    </div>
 </body>
 </html>
